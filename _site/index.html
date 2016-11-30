@@ -1,422 +1,920 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <!--
-    * Author:         BeiYuu
-    * Revised:        Mukosame
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。">
+    <meta name="keywords"  content="黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品, 肖玉, Lynn, 肖玉的男朋友">
+    <meta name="theme-color" content="#000000">
+    
+    <title>黄玄的博客 | Hux Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
     -->
-    <meta charset="utf-8" />
-    <title>Mukosame's blog</title>
-    <meta name="author" content="Mukosame" />
-    <meta name="renderer" content="webkit">
-    <meta name="description" content="Everything about Mukosame" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="/css/default.css" type="text/css" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
-    <link rel="alternatecss" type="application/rss+xml" title="“Mukosame's Blog”" href="http://mukosame.github.io/feed.xml">
-    <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
 </head>
-<body>
 
-    <div class="home-menu">
-        <div class="home-icon-con">
-            <a class="home-menu-icon" href="/">Mukosame</a>
-            <a class="home-follow" href="#" title="Contact Me">+</a>
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Hux Blog</a>
         </div>
-        <div class="home-contact">
-            <a href="https://github.com/Mukosame/" target="_blank" style="margin-left:-5px;"><img src="https://github.com/favicon.ico" alt="" width="22"/></a>
-            <a href="http://www.douban.com/people/23026489/" target="_blank" style="text-align:center;"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
-            <a href="/feed.xml" target="_blank" style="text-align:right"><img src="http://freefavicons.org/download/rss/rss.ico" alt="" width="22"/></a>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/portfolio/">Portfolio</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
 
-    <div class="index-content blog">
-    <div class="section">
-        <ul class="artical-cate">
-            <li class="on"><a href="/"><span>Blog</span></a></li>
-            <li style="text-align:center"><a href="/dump"><span>Dump</span></a></li>
-            <li style="text-align:right"><a href="/project"><span>Project</span></a></li>
-        </ul>
-
-        <div class="cate-bar"><span id="cateBar"></span></div>
-
-        <ul class="artical-list">
-        
-            <li>
-                <h2><a href="/over-1000-movies">看过一千部以上的电影后</a></h2>
-                <div class="title-desc">是什么体验？</div>
-            </li>
-        
-            <li>
-                <h2><a href="/put-an-end-to-the-relationship">单身、安全感以及独生子女</a></h2>
-                <div class="title-desc">夜里的胡思乱想。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/wutao-take-out-food">跟着池上饭包学做工作餐</a></h2>
-                <div class="title-desc">工作日总是没时间做饭，总想起美味又丰富的台铁便当。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/rain-in-Jiangxi">少年听雨他乡中</a></h2>
-                <div class="title-desc">路上行人欲断魂。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/show-off">班门弄斧</a></h2>
-                <div class="title-desc">写在被碾压的缝隙里。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/shirobaku-the-loveletter">为什么《白箱》在Bangumi排名到了Top10？</a></h2>
-                <div class="title-desc">因为它是一部动画人做给自己的作品啊。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/review-of-2015">在新年的第一天</a></h2>
-                <div class="title-desc">静静回想2015</div>
-            </li>
-        
-            <li>
-                <h2><a href="/the-wall">The Wall</a></h2>
-                <div class="title-desc">非典型乐队主唱成长史。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/copenhagen">哥本哈根：立场、责任与交流</a></h2>
-                <div class="title-desc">本文中所解读的《哥本哈根》是根据Michael Frayn同名小说改编的电影，它基于1941年9月德国物理学家维尔纳·海森堡与导师尼尔斯·玻尔谜一样的会面而展开。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/warm-fantasy">以幻想取暖</a></h2>
-                <div class="title-desc">淡白色，新棉花的颜色，杏仁奶糖的颜色，被水浸过的墙皮剥落的颜色，早上醒来刚睁开眼睛透过睫毛看到的颜色，被衰减过的市井杂声的颜色。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/caravans">《流浪者史诗》读后感</a></h2>
-                <div class="title-desc">天地间，所有的心灵都在流浪。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/drive-through-xinjiang">北疆行纪</a></h2>
-                <div class="title-desc">车穿大漠。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/nov-of-2015">十一月：电影的故事</a></h2>
-                <div class="title-desc">完全没有印象我自己在做什么。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/oct-of-2015">十月:重返的故事</a></h2>
-                <div class="title-desc">若在以前，我大概会问更多的问题，甚至会和红砖房里的人聊聊，然后查上好多资料，写篇几千字的新闻稿什么的。但我只是沿着城墙慢慢地走着，看马路变宽，看慢慢低下去的日光直直地打过来。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/sept-of-2015">九月:旅行的故事</a></h2>
-                <div class="title-desc">九月一半的时间都是在车上，在旅馆里，在语言不通的地方跑来跑去，满腔故事，罄竹难书。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/aug-of-2015">八月：奇遇的故事</a></h2>
-                <div class="title-desc">八月的时候发生了许多奇遇。其中一些事情实际上是很悲伤的，比如丢钱包。不过，作为我人生第一次丢钱包的经历，仍然很有意思。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/july-of-2015">七月：故事的碎片</a></h2>
-                <div class="title-desc">2014年的夏天结束于7月17日。这是我许久后才意识到的事。日历上的数字7看起来是安全无害的蓝色，而日历下面的日子却通通被紫绿条纹的漩涡吸走了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/june-of-2015">六月：告别的故事</a></h2>
-                <div class="title-desc">告别的故事。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/may-of-2015">五月：病中的故事</a></h2>
-                <div class="title-desc">喏，这就是我和五月病抗争的故事了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/april-of-2015">四月：梦里的故事</a></h2>
-                <div class="title-desc">梦</div>
-            </li>
-        
-            <li>
-                <h2><a href="/march-of-2015">三月：出逃的故事</a></h2>
-                <div class="title-desc">在三月第一天刚开始的时候，我踏上清晨出发的火车，穿过八达岭，独自前往张家口。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/feb-of-2015">二月：声音的故事</a></h2>
-                <div class="title-desc">博物馆参观癖的开始。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/jan-of-2015">一月：照片的故事</a></h2>
-                <div class="title-desc">在2014年1月里我发了10条状态，上传了5张照片，读了7本书，为31部片子点了“看过”。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/first-shoot">记第一次射箭</a></h2>
-                <div class="title-desc">Excited!</div>
-            </li>
-        
-            <li>
-                <h2><a href="/one-night">一夜</a></h2>
-                <div class="title-desc">在彻底淡忘之前，把荷德边境的那一夜写下来。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/in-geneve">日内瓦与《异端的权利》</a></h2>
-                <div class="title-desc">那些魂牵梦绕的地名和人名如此稠密地扑面而来，我如同被高速飞旋的古老幽灵包围。当幽灵散了，我却仍然是我。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/on-the-train">旅行与火车</a></h2>
-                <div class="title-desc">睡眠和阅读往往在我感到极度匮乏的时候降临，为我苍白无趣的生命带来些可能性的意味。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/walk-to-france">走路去法国</a></h2>
-                <div class="title-desc">我们在护栏前与友人作了今日的告别，转身夹紧了外套和背包，走入地图所指的一片茫茫中。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/still-in-germany">Country Talk</a></h2>
-                <div class="title-desc">我还在德国。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/seven-ideas">七个想法</a></h2>
-                <div class="title-desc">这几天来的一点感悟</div>
-            </li>
-        
-            <li>
-                <h2><a href="/walk-through">穿行</a></h2>
-                <div class="title-desc">我们又何处去了呢？</div>
-            </li>
-        
-            <li>
-                <h2><a href="/city-visit">进大村</a></h2>
-                <div class="title-desc">之前网上有个帖子，讲二战时期意大利人的各种坑队友事迹，在昨天一天的行程中我有幸体验到了全部。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/eat-eat-eat">吃吃吃</a></h2>
-                <div class="title-desc">回顾一下这几天的阅读变化，大概就是个逐渐接近一名可憎的成年人的生活的过程。作为一个饿得比别人早、吃得比别人麻烦的中国小孩，烤箱和鸡肉的优先级可比小说高多了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/forget-confucius">忘掉孔子学院吧</a></h2>
-                <div class="title-desc">Never forget the class struggle.</div>
-            </li>
-        
-            <li>
-                <h2><a href="/sound-of-rain-and-else">雨声及其他</a></h2>
-                <div class="title-desc">她忽然转过身来，端着咖啡杯：“你今晚如果有什么安排，可以随时来敲门告诉我……我们应当有更多的联系，但我却不知道该做些什么……”</div>
-            </li>
-        
-            <li>
-                <h2><a href="/the-wall">The Wall</a></h2>
-                <div class="title-desc">Pink Floyd</div>
-            </li>
-        
-            <li>
-                <h2><a href="/lonely-hotel">酒店孤独症患者</a></h2>
-                <div class="title-desc">在陌生的床铺上醒来，走向陌生的人群里，走在陌生的街道上。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/eye-in-psycho">Eye in Psycho</a></h2>
-                <div class="title-desc">In Psycho, Hitchcock was not satisfied with just displaying ordinary people under severe circumstances.</div>
-            </li>
-        
-            <li>
-                <h2><a href="/themes-of-road-movie-genre">Themes of Road Movie Genre</a></h2>
-                <div class="title-desc">Once sitting behind the steering wheel, the world expands in front of your eyes in a totally different perspective.</div>
-            </li>
-        
-            <li>
-                <h2><a href="/di-di-the-girl">娣娣</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍24日的早上下了些雨，走廊尽头是一丛湿淋淋绿色。尘土和燥气都被浇了下去，空气既湿又闷，窜到人心里去，撩拨个不停。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/hu-bu-gui">胡不归</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍又一站，又一站快到了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/dating-with-may">五月之约</a></h2>
-                <div class="title-desc">多么奇怪的事情啊：两个人相隔千里，仅仅凭借一些不那么准时的文字来维持交流。可是心里想的，却是同一件事。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/messy-april">这纷纷的四月</a></h2>
-                <div class="title-desc">北京四月的空气里浮满了柳絮。从园子里，到铁轨旁。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/review-on-shakespear">评托尔斯泰《论莎士比亚和戏剧》</a></h2>
-                <div class="title-desc">托尔斯泰读莎士比亚的剧作已经有50年，然而，他仍然无法接受知识界公认的评价——即莎剧是“尽善尽美的杰作”。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/lost-in-woods">迷失山林</a></h2>
-                <div class="title-desc">既然接受了“迷路”这个设定，反倒不必为之慌张了。想今天再可怖的事都经历过了，纵运气不佳，困死山林，误了火车，也纯粹是自己作死，怨不得什么人的。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/xuanhua-gu-lou">宣化古楼</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍宣化区位于张家口市区东南方，古为京城以西第一座府城。秦为上谷郡，明为长城九镇之一，清为全国七十二府之一的宣化府。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/leave-beijing">离京</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍只身于黑夜笼罩下出发，有种秘而不宣的欢喜。熟睡的人啊，你们怎能猜到，我将去向哪里？</div>
-            </li>
-        
-            <li>
-                <h2><a href="/women-lost-in-fantasy">耽于妄想的女人们</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍这是一篇在独自出走的火车上写就的文字。如今读来，大概知道为何“女汉子”的生活艰苦如许了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/wang-xiang-shui">妄想税</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍我失去归宿的现实才是我真正的归宿。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/child-in-library">蹲书店的小孩子</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍小时候的假期，大多数时日是泡在书店里的。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/fine-dress">锦衣</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍一篇数年前的小文，写作时间大概是2010年6月前后。而今读来，颇有趣味。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/soul-under-70db">七十分贝下的灵魂</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍深夜，筋疲力尽地走出系馆，弯腰开车锁。抬头时，猛地发现橘红的灯光里，映出一片一片小小雪花的影子。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/last-day-alone">最后一天独居</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍我不足一周的独居生活，就要结束了。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/visit-to-qin">访秦记</a></h2>
-                <div class="title-desc">我是为赴一个梦而来，然而梦中的那人终未现身。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/train-to-qin">入秦记</a></h2>
-                <div class="title-desc">大多数的故事，都从火车开始。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/xie-dui-lian2">春节闲话（二）写对联</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍接上回写对联继续讲起。上回说到，爹在过年前二三日就开始铺纸练字准备写对联了。其实这二三日，不仅是他练字的时限。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/xie-dui-lian1">春节闲话（一）写对联</a></h2>
-                <div class="title-desc">‍‍‍‍‍‍‍‍‍‍‍‍又是一年春节时。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/qingwen-furong">晴雯：芙蓉女儿饶牵念</a></h2>
-                <div class="title-desc">说到精神上的超脱，红楼梦中当属晴雯。张爱玲说晴雯不守女奴的本分，可以是任何时代的女孩子。晴雯实际也未把自己当做女奴看。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/jiabaoyu-butong-ganqing">贾宝玉对待黛玉、宝钗、袭人的感情有何不同？</a></h2>
-                <div class="title-desc">华林之中，遍布悲凉之气，呼吸感知于其间者，惟有宝玉一人。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/read-a-book">读书这件小事</a></h2>
-                <div class="title-desc">读诗书，靠的还是童子功。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/chinese-rock-upndown">中国摇滚的落寞与喧嚣</a></h2>
-                <div class="title-desc">写在愤怒大三的尾巴上。</div>
-            </li>
-        
-            <li>
-                <h2><a href="/scientists-alienation">谈科学家的异化</a></h2>
-                <div class="title-desc">马克思主义观点看科学家的异化。</div>
-            </li>
-        
-        </ul>
-    </div>
-    <div class="aside">
-    </div>
-</div>
-
-
-
-<script type="text/javascript">
-    $(function(){
-        function animateBar($item,noAni){
-            var spanLeft = $item.find('span').offset().left;
-            var conLeft = $item.parent().offset().left;
-            var left = spanLeft - conLeft;
-            var width = $item.find('span').width() + 8;
-
-            if(noAni){
-                $('#cateBar').css({left:left,width:width})
-            }else{
-                $('#cateBar').stop().animate({left:left,width:width},300)
-            }
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
         }
+    }
 
-        var waitForFinalEvent = (function () {
-            var timers = {};
-            return function (callback, ms, uniqueId) {
-                if (!uniqueId) {
-                    uniqueId = "Don't call this twice without a uniqueId";
-                }
-                if (timers[uniqueId]) {
-                    clearTimeout (timers[uniqueId]);
-                }
-                timers[uniqueId] = setTimeout(callback, ms);
-            };
-        })();
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
 
-        $('.artical-cate li').mouseenter(function(){
-            animateBar($(this));
-        }).mouseleave(function(){
-            animateBar($('.artical-cate .on'));
-        });
-
-        $(window).resize(function(e){
-            waitForFinalEvent(function(){
-                animateBar($('.artical-cate .on'));
-            })
-        })
-        animateBar($('.artical-cate .on'),true);
-    });
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
 </script>
 
 
-    <script type="text/javascript">
-        $(function(){
-            $('.home-follow').click(function(e){
-                e.preventDefault();
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Hux Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">一生想做浪漫极客</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-                if($('.home-contact').is(':visible')){
-                    $('.home-contact').slideUp(100);
-                }else{
-                    $('.home-contact').slideDown(100);
-                }
-            });
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/2016/11/20/sw-101-gdgdf/">
+        <h2 class="post-title">
+            Service Worker 101「GDG DevFest 2016 北京」
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Slides: Service Worker 101, Working Offline and Instant Loading (GDG DevFest 2016 Beijing)
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  下滑这里查看更多内容
+
+
+TLDR; It covers lots of cool stuff about Service Worker!
+
+Watching Fullscreen → 
+
+
+    
+    Scanning on mobile
+
+
+Demo Code → 
+
+
+  Hello World of Service Worker
+  Make your own Offli...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on November 20, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/10/20/pwa-qcon2016/">
+        <h2 class="post-title">
+            Progressive Web Apps，复兴序章「QCon 上海 2016」
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Slides: Progressive Web Apps, Make Web Great Again. (QCon Shanghai 2016)
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  下滑这里查看更多内容
+
+
+Watching Fullscreen →
+
+
+    
+    Scanning on mobile
+
+
+Catalog
+
+
+  The State Of Web
+  Rethinking Hybridzation
+  PWA 101
+    
+      Definition
+      Add To HomeScreen
+        
+       ...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on October 20, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/06/05/pwa-in-my-pov/">
+        <h2 class="post-title">
+            Progressive Web App 之我见
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Slides: Progressive Web App, in my points of view
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  下滑这里查看更多内容
+
+
+Watching Fullscreen →
+
+
+    
+    Scanning on mobile
+
+
+Catalog
+
+
+  WHAT is Progressive Web App?
+  1 - Installability
+  2 - App Shell
+  3 - Offline
+    
+      SERVICE WORKER!
+    
+  
+...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on June 5, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2016/02/01/React-vs-Angular2/">
+        <h2 class="post-title">
+            React vs Angular 2：冰与火之歌「译」
+        </h2>
+        
+        <h3 class="post-subtitle">
+            React versus Angular 2: There Will Be Blood
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  这篇文章转载自我在知乎专栏「前端外刊评论」上发表的文章。
+
+
+Angular 2 已经发布 Beta 版，而且似乎很有信心在 2016 年成为热门框架。是时候进行一场巅峰对决了，我们来看看它如何与 React 这个 2015 年的新宠抗衡。
+
+免责声明：我之前很喜欢使用 Angular 1，不过在 2015 年转到了 React。最近我也在 Pluralsight 上发布了一门关于 R...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on February 1, 2016
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/28/css-sucks-2015/">
+        <h2 class="post-title">
+            都 2015 年了，CSS 怎么还是这么糟糕
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Slides: CSS Still Sucks 2015
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  下滑这里查看更多内容
+
+
+Watching Fullscreen →
+
+
+
+你也可以通过扫描二维码在手机上观看
+
+
+这个 Web Slides 开源在我的 Github 上，欢迎你帮助我完善这个展示文稿，你可以给我提 issue，可以 fork &amp; pull request。如果它能帮助到你了，希望你还能不吝啬 star 一下这个项目
+
+Catalog
+
+
+  Document...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on December 28, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/12/15/ios9-safari-web/">
+        <h2 class="post-title">
+            iOS 9，为前端世界都带来了些什么？「译」
+        </h2>
+        
+        <h3 class="post-subtitle">
+            iOS 9, Safari and the Web: 3D Touch, new Responsive Web Design, Native integration and HTML5 APIs
+        </h3>
+        
+        <div class="post-content-preview">
+            2015 年 9 月，Apple 重磅发布了全新的 iPhone 6s/6s Plus、iPad Pro 与全新的操作系统 watchOS 2 与 tvOS 9（是的，这货居然是第 9 版），加上已经发布的 iOS 9，它们都为前端世界带来了哪些变化呢？作为一个 web 开发者，是时候站在我们的角度来说一说了！
+
+
+  注！ 该译文存在大量英文术语，笔者将默认读者知晓 ES6、viewpor...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on December 15, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/10/28/how-designer-learn-fe/">
+        <h2 class="post-title">
+            「知乎」设计师如何学习前端？
+        </h2>
+        
+        <h3 class="post-subtitle">
+            How designers learn front-end development?
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  这篇文章转载自我在知乎上的回答，也被刊登于优秀网页设计等多个网站上 ;)
+
+
+笔者的经历在知乎就可以看到，大学专业是数字媒体艺术，大一实习过动效设计师，大二拿到了人生第一个大公司 offer 是阿里的交互设计，后来转岗到淘宝旅行的前端团队，现在在微信电影票做前端研发。
+
+也是走过了不少野路子，不过还好有小右哥 @尤雨溪 这样艺术/设计转前端的大神在前面做典范，也证明这条路是玩的通的 ;...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on October 28, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/09/22/js-version/">
+        <h2 class="post-title">
+            ES5, ES6, ES2016, ES.Next: JavaScript 的版本是怎么回事？「译」
+        </h2>
+        
+        <h3 class="post-subtitle">
+            ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?
+        </h3>
+        
+        <div class="post-content-preview">
+            JavaScript 有着很奇怪的命名史。
+
+1995 年，它作为网景浏览器（Netscape Navigator）的一部分首次发布，网景给这个新语言命名为 LiveScript。一年后，为了搭上当时媒体热炒 Java 的顺风车，临时改名为了 JavaScript （当然，Java 和 JavaScript 的关系，就和雷锋和雷锋塔一样 —— 并没有什么关系）
+
+
+歪果仁的笑话怎么一点都不好...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on September 22, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/07/09/js-module-7day/">
+        <h2 class="post-title">
+            JavaScript 模块化七日谈
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Slides: JavaScript Modularization Journey
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  下滑这里查看更多内容
+
+
+7月9日，我在公司内部进行了名为「JavaScript 模块化七日谈」分享，并将该 Slides 分享到了微博上。出乎意料地，这篇微博先后被 @JS小组 @尤小右 @寸志 等近 200 人转发，阅读达到 10w，获得了还不错的评价。
+
+于是，我决定将它重新发到我的博客上，并为它专门制作了适用于 Keynote 展示文稿的新布局。它能自动根据屏幕大小/旋转以一定...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on July 9, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/06/15/alitrip-strategy/">
+        <h2 class="post-title">
+            聊聊「阿里旅行 · 去啊」—— 行业与战略 
+        </h2>
+        
+        <h3 class="post-subtitle">
+            聊聊在线旅行行业与老东家的产品思路
+        </h3>
+        
+        <div class="post-content-preview">
+            
+  本篇为该系列第一篇 —— 行业与战略，让我们聊聊行业、战略与格局。
+
+
+前言
+
+近几年，互联网产品从线上斗到了线下，互联网行业和传统行业的跨界融合屡见不鲜，“渗透传统行业”几乎成为了全行业下一轮创新的标配，新词“互联网+”也应运而生：
+
+
+  将互联网行业的生产要素，深度融入经济、社会等各个领域，尝试改变一些传统的实体经济行业，创造出新的产品形态、商业模式和生态
+
+
+O2O 领域已经有...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Hux on June 15, 2015
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    
+    <li class="next">
+        <a href="/page2">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                                <a href="/tags/#知乎" title="知乎" rel="7">
+                                    知乎
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#Android" title="Android" rel="2">
+                                    Android
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#交互设计" title="交互设计" rel="4">
+                                    交互设计
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#阿里巴巴" title="阿里巴巴" rel="3">
+                                    阿里巴巴
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#前端开发" title="前端开发" rel="11">
+                                    前端开发
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#职业病" title="职业病" rel="3">
+                                    职业病
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#生活" title="生活" rel="2">
+                                    生活
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#hUX 随想录" title="hUX 随想录" rel="2">
+                                    hUX 随想录
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#UX Design" title="UX Design" rel="3">
+                                    UX Design
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#OS" title="OS" rel="2">
+                                    OS
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#JavaScript" title="JavaScript" rel="8">
+                                    JavaScript
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#译文" title="译文" rel="2">
+                                    译文
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#PWA" title="PWA" rel="3">
+                                    PWA
+                                </a>
+                            
+                        
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="/img/avatar-hux.jpg" />
+                        
+                        
+                            <p>写写代码，做做设计，<br>离开世界之前，一切都是过程</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/huxpro">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="http://weibo.com/huxpro">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/huxpro">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            <li>
+                                <a target="_blank" href="https://github.com/huxpro">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://su.gallery/">Su</a></li>
+                    
+                        <li><a href="http://mida.re/">乱序</a></li>
+                    
+                        <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
+                    
+                        <li><a href="http://lingyu.wang/">天镶的博客</a></li>
+                    
+                        <li><a href="http://hmqk1995.github.io">Luke 的自留地</a></li>
+                    
+                        <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
+                    
+                        <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
+                    
+                        <li><a href="http://xieminis.me/">解旻的博客</a></li>
+                    
+                        <li><a href="http://dhong.co">DHong Say</a></li>
+                    
+                        <li><a href="http://ingf.github.io/">尹峰以为</a></li>
+                    
+                        <li><a href="http://wepiaofei.github.io/blog/">前端神盾局</a></li>
+                    
+                </ul>
+                
+    		</div>
+        
+	</div>
+</div>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/huxpro">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hux Blog 2016
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script type="text/javascript">
+    if(navigator.serviceWorker){
+        // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {console.log('Service Worker Registered. ', registration)})
+            .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+    }
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
         })
     </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
 </body>
+
 </html>
