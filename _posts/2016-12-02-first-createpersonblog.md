@@ -9,7 +9,7 @@ catalog: true
 tags:
     - 技术
 ---
-
+> “Yeah It's on. ”
 ##目的
 为什么要搭建个人博客呢？
 [跳过废话，开始搭建个人博客](#build) 
