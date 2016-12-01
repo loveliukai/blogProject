@@ -4,7 +4,7 @@ title:      "新象伊始筑高台"
 subtitle:   "  ——起航，如何搭建自己的博客主页"
 date:       2016-12-02 00:00:00
 author:     "Urolzeen"
-header-img: "img/bloghead/head1.jpg"
+header-img: "img/blogimage/secondblog/head1.jpg"
 catalog: true
 tags:
     - 技术
@@ -40,7 +40,8 @@ tags:
 安装好railsinstaller后，进入windows CMD命令行输入gem install jeky11
 
 结果如下图所示报错
-![](http://i.imgur.com/HT8wgI4.png)
+
+![](http://i.imgur.com/OGhtyoE.png)
 
 这个错误是由于万能的wall墙掉了gem源，于是子安更换为国内的淘宝源
 
@@ -51,12 +52,12 @@ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 执行gem sources -l 发现此时有且仅有国内的了，如图所示
 
 
-![](http://i.imgur.com/lDs6TvS.png)
+![](http://i.imgur.com/xXwIbkS.png)
 
 ####2.安装jekyll
 继续在终端输入 gem install jeky11，此时便不会报错了，安装过程如下图所示：
 
-![](http://i.imgur.com/v7UtEmJ.png)
+![](http://i.imgur.com/KqYAkBh.png)
 
 看到Done代表jekyll已成功安装完成
 
@@ -66,33 +67,32 @@ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 输入jekyll server启动一个本地服务器
 
 
-![](http://i.imgur.com/TjEKnQW.png)
+![](http://i.imgur.com/oE5KZm5.png)
 
 如上所示，提示minima错误，此时输入gem install minima安装这个源，如图所示：
 
 
-![](http://i.imgur.com/Dm7G7g8.png)
+![](http://i.imgur.com/wP1HGmz.png)
 
 继续输入jekyll server，发现继续报错
 
 
-![](http://i.imgur.com/ko3KUfZ.png)
+![](http://i.imgur.com/gDUQVsX.png)
 
 我们再次输入 gem install jekyll-feed安装这个源
 
 
-![](http://i.imgur.com/NdiPceU.png)
-
+![](http://i.imgur.com/nTVIYAh.png)
 发现安装成功，然后再次执行jekyll server，终于成功启动了本地服务器
 
 
-![](http://i.imgur.com/IvOYUBP.png)
+![](http://i.imgur.com/3Bbk8oc.png)
 
 ###4.打开浏览器查看
 打开浏览器，在地址栏输入 http://127.0.0.1:4000查看博客网页
 
 
-![](http://i.imgur.com/qAnmWmY.png)
+![](http://i.imgur.com/gO5jKQO.png)
 
 至此，就成功的搭建了jekyll个人博客主页
 
