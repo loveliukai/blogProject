@@ -4,7 +4,7 @@ title:      "新象伊始筑高台"
 subtitle:   "  ——起航，如何搭建自己的博客主页"
 date:       2016-12-02 00:00:00
 author:     "Urolzeen"
-header-img: "img/blogimage/secondblog/head1.jpg"
+header-img: "img/blogimage/second/head1.jpg"
 catalog: true
 tags:
     - 技术
@@ -41,7 +41,9 @@ tags:
 
 结果如下图所示报错
 
+
 ![](http://i.imgur.com/OGhtyoE.png)
+
 
 这个错误是由于万能的wall墙掉了gem源，于是子安更换为国内的淘宝源
 
