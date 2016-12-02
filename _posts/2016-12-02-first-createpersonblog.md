@@ -98,3 +98,24 @@ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 
 至此，就成功的搭建了jekyll个人博客主页
 
+###绑定域名
+
+####1.选择博客模板
+
+jekyll默认的博客主题过于简洁，此时我们可以去github搜一款使用jekyll搭建的博客，然后将其整个仓库克隆下来。修改_config.yml里面的配置信息，这样我们就有了一个自己喜欢的博客模板。
+
+####2.申请域名
+申请域名国内可以去万网或者阿里云进行申请，子安是在阿里云申请的，然后去DNSPod对域名进行解析：
+
+![](http://i.imgur.com/BLtWhvZ.png)
+
+其中两条NS记录DNSpod自动解析出来的，我们将这两条DNS加到自己的域名注册商那里去，例如子安的就是万网
+![](http://i.imgur.com/T7xT5fS.png)
+
+修改完后，大约10分钟生效，此时，此时我们就可以在网页输入自己的域名进行访问了
+
+![](http://i.imgur.com/X6b2bvP.jpg)
+
+至此，我们的个人博客就搭建完成了。
+
+——Urolzeen写于2016.12.02
