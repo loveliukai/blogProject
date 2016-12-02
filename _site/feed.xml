@@ -5,9 +5,123 @@
     <description>关于游戏与艺术、编程与生活 | 幽子安，Web &amp; Mobile Lover，Front-End Engineer，UX Designer | 这里是 Urolzeen@幽子安 的个人博客，携子之手，与子偕老。</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 02 Dec 2016 00:44:59 +0800</pubDate>
-    <lastBuildDate>Fri, 02 Dec 2016 00:44:59 +0800</lastBuildDate>
+    <pubDate>Fri, 02 Dec 2016 12:40:59 +0800</pubDate>
+    <lastBuildDate>Fri, 02 Dec 2016 12:40:59 +0800</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>新象伊始筑高台</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Yeah It’s on. ”
+##目的
+为什么要搭建个人博客呢？
+&lt;a href=&quot;#build&quot;&gt;跳过废话，开始搭建个人博客&lt;/a&gt; 
+特别是在如今拥有CSDN、博客园、简书的这些国内很火的博客平台下，似乎搭建个人 博客显得有些鸡肋。而对子安而言，作为一个程序员，将自由与随心看的无比重要，那些博客平台提供的功能虽然十分强大 ，但是仍然会有着一些缺点。千篇一律的界面，空间、流量的限制等等，最主要的是对于子安而言，有时候写博客并不是为了给别人看的，只是想写一些文字来记录慢慢走过的时光，仅此而已。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;##正文
+###准备
+必备的知识：&lt;/p&gt;
+
+&lt;p&gt;1.git知识  &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.jekyll &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;子安由于工作学习的原因需要使用windows平台，因此子安的平台都是在windows环境下搭建的&lt;/p&gt;
+
+&lt;p&gt;所需的工具：&lt;/p&gt;
+
+&lt;p&gt;1.git工具&lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;git传送门&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.jekyll环境 &lt;a href=&quot;http://pan.baidu.com/s/1pLKuVbH&quot;&gt;railsinstaller-3.2下载&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;###开始&lt;/p&gt;
+
+&lt;p&gt;####1.安装环境
+安装好railsinstaller后，进入windows CMD命令行输入gem install jeky11&lt;/p&gt;
+
+&lt;p&gt;结果如下图所示报错&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/OGhtyoE.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个错误是由于万能的wall墙掉了gem源，于是子安更换为国内的淘宝源&lt;/p&gt;
+
+&lt;p&gt;gem sources –add https://gems.ruby-china.org/ –remove https://rubygems.org/&lt;/p&gt;
+
+&lt;p&gt;注意要将add后面的https改为http，后面的不变&lt;/p&gt;
+
+&lt;p&gt;执行gem sources -l 发现此时有且仅有国内的了，如图所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/xXwIbkS.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;####2.安装jekyll
+继续在终端输入 gem install jeky11，此时便不会报错了，安装过程如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KqYAkBh.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;看到Done代表jekyll已成功安装完成&lt;/p&gt;
+
+&lt;p&gt;###3.启动服务器
+在终端输入jekyll new blog来创立新博客，然后 cd blog进入新建的博客目录&lt;/p&gt;
+
+&lt;p&gt;输入jekyll server启动一个本地服务器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/oE5KZm5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如上所示，提示minima错误，此时输入gem install minima安装这个源，如图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/wP1HGmz.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;继续输入jekyll server，发现继续报错&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/gDUQVsX.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们再次输入 gem install jekyll-feed安装这个源&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/nTVIYAh.png&quot; alt=&quot;&quot; /&gt;
+发现安装成功，然后再次执行jekyll server，终于成功启动了本地服务器&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/3Bbk8oc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;###4.打开浏览器查看
+打开浏览器，在地址栏输入 http://127.0.0.1:4000查看博客网页&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/gO5jKQO.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，就成功的搭建了jekyll个人博客主页&lt;/p&gt;
+
+&lt;p&gt;###绑定域名&lt;/p&gt;
+
+&lt;p&gt;####1.选择博客模板&lt;/p&gt;
+
+&lt;p&gt;jekyll默认的博客主题过于简洁，此时我们可以去github搜一款使用jekyll搭建的博客，然后将其整个仓库克隆下来。修改_config.yml里面的配置信息，这样我们就有了一个自己喜欢的博客模板。&lt;/p&gt;
+
+&lt;p&gt;####2.申请域名
+申请域名国内可以去万网或者阿里云进行申请，子安是在阿里云申请的，然后去DNSPod对域名进行解析：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/BLtWhvZ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中两条NS记录DNSpod自动解析出来的，我们将这两条DNS加到自己的域名注册商那里去，例如子安的就是万网
+&lt;img src=&quot;http://i.imgur.com/T7xT5fS.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修改完后，大约10分钟生效，此时，此时我们就可以在网页输入自己的域名进行访问了&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/X6b2bvP.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，我们的个人博客就搭建完成了。&lt;/p&gt;
+
+&lt;p&gt;——Urolzeen写于2016.12.02&lt;/p&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 08:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/02/first-createpersonblog/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/02/first-createpersonblog/</guid>
+        
+        <category>技术</category>
+        
+        
+      </item>
     
       <item>
         <title>起点-2016</title>
