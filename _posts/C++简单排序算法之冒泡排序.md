@@ -1,0 +1,94 @@
+冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。
+它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。
+
+冒泡排序算法的运作如下：（从后往前）
+
+    比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+    对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+    针对所有的元素重复以上的步骤，除了最后一个。
+    持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+ 
+ 
+
+```
+#include <iostream>
+using namespace std;
+
+//exchange the 2 items a and b
+void swap(int &a, int &b)
+{
+	a = a + b;
+	b = a - b;
+	a = a - b;
+}
+
+//ergodic the buf and print it
+void ergodic(int  *p,int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		cout << p[i] << " ";
+	}
+}
+
+void BubbleSort(int  *p, int length)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10 - i - 1; j++)
+		{
+			if (p[j] > p[j + 1])
+			{
+				swap(p[j], p[j + 1]);
+			}
+		}
+	}
+}
+
+int main(int argc, char *args[])
+{
+	int buf[10] = { 12, 4, 34, 6, 8, 65, 3, 2, 988, 45 };
+	int m = sizeof(buf);
+	cout << "排序前:" << endl;
+	ergodic(buf,sizeof(buf)/sizeof(int));
+	
+	BubbleSort(buf, sizeof(buf) / sizeof(int));
+
+	cout << "\n\n\n排序后：" << endl;
+	ergodic(buf, sizeof(buf) / sizeof(int));
+	getchar();
+
+}
+```
+运行结果：
+![这里写图片描述](http://img.blog.csdn.net/20160908214613391)
+
+冒泡排序的思想就是将第一个元素与第二个元素比较，如果第一个元素比第二个元素大，那么就将两者交换，并继续用第二个元素和第三个元素比较，在一个循环结束后，最大的元素会沉到数组的最右边，因此，下次循环就直接到倒数第二个元素为止，最后的一次循环就只剩第一个元素，至此，所有元素都排列完成。这种排序是按照从小到大排序，；还可以按照从大到小的顺序排列，即最大的向左沉，代码如下：
+
+```
+void BubbleSort(int  *p, int length)
+{
+	for (int i = 9; i > 0; i--)
+	{
+		for (int j = 9; j > 10 - i - 1; j--)
+		{
+			if (p[j] > p[j - 1])
+			{
+				swap(p[j], p[j - 1]);
+			}
+		}
+	}
+	/*for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10 - i - 1; j++)
+		{
+			if (p[j] > p[j + 1])
+			{
+				swap(p[j], p[j + 1]);
+			}
+		}
+	}*/
+}
+```
+运行结果
+![这里写图片描述](http://img.blog.csdn.net/20160908220042133)

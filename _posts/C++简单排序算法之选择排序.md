@@ -1,0 +1,109 @@
+选择排序的基本思想是：每一趟在n-i+1（i=1，2，…n-1）个记录中选取关键字最小的记录作为有序序列中第i个记录。基于此思想的算法主要有简单选择排序、树型选择排序和堆排序。
+简单选择排序的基本思想：第1趟，在待排序记录r[1]~r[n]中选出最小的记录，将它与r[1]交换；第2趟，在待排序记录r[2]~r[n]中选出最小的记录，将它与r[2]交换；以此类推，第i趟在待排序记录r[i]~r[n]中选出最小的记录，将它与r[i]交换，使有序序列不断增长直到全部排序完毕。
+以下为简单选择排序的存储状态，其中大括号内为无序区，大括号外为有序序列：
+初始序列：{49 27 65 97 76 12 38}
+　　第1趟：12与49交换：12{27 65 97 76 49 38}
+　　第2趟：27不动　：12 27{65 97 76 49 38}
+　　第3趟：65与38交换：12 27 38{97 76 49 65}
+　　第4趟：97与49交换：12 27 38 49{76 97 65}
+　　第5趟：76与65交换：12 27 38 49 65{97 76}
+　　第6趟：97与76交换：12 27 38 49 65 76 97 完成
+选择排序算法为一个不稳定的算法，因为如果一个待排的序列有两个甚至是多个元素相等，而对于我们来说是不期望改变相等元素的位置的，但是快速排序并不能向我们保证这一点
+
+代码：
+
+```
+#include <iostream>
+using namespace std;
+
+//exchange the 2 items a and b
+void swap(int &a, int &b)
+{
+	a = a + b;
+	b = a - b;
+	a = a - b;
+}
+
+//ergodic the buf and print it
+void ergodic(int  *p,int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		cout << p[i] << " ";
+	}
+}
+void select_sort(int  *p, int length)
+{
+	int index;
+	for (int i = 0; i < length - 1; i++)
+	{
+		index = i;
+		for (int j = i + 1; j < length;j ++)
+		{
+			if (p[index] < p[j])
+			{
+				index = j;
+			}
+		}
+
+		swap(p[index], p[i]);
+	}
+}
+
+int main(int argc, char *args[])
+{
+	int buf[10] = { 12, 4, 34, 6, 8, 65, 3, 2, 988, 45 };
+	int m = sizeof(buf);
+	cout << "排序前:" << endl;
+	ergodic(buf,sizeof(buf)/sizeof(int));
+	
+	//BubbleSort(buf, sizeof(buf) / sizeof(int));
+	select_sort(buf, sizeof(buf) / sizeof(int));
+
+	cout << "\n\n\n排序后：" << endl;
+	ergodic(buf, sizeof(buf) / sizeof(int));
+	getchar();
+
+}
+```
+运行结果
+![这里写图片描述](http://img.blog.csdn.net/20160908222231276)
+
+选择排序的思想就是在开始进入第一次循环时，将第一个元素的下标赋给index，此时p[index]为第一个元素，将其与p[j]也就是第二个元素进行比较，如果第二个元素大，则将第二个元素的下标赋给index；也就是说index永远都是记录的较大的那个元素的下标，因此 当内层循环遍历结束之后，index为序列中的最大的那个元素的下标，将这个元素与p[0](此时为第一个元素)交换，这样最大的元素就排在了最左边，继续循环，直到所有的数列全部排序完成。
+
+选择排序与冒泡排序的不同：作为算法复杂度都为O(n^2)的排序算法，中心思想都是在第一趟遍历的过程中就将最大值(或者最小值)找出来。不同的是冒泡排序在每次比较时都将两个数据进行了交换，而选择排序只是记录了较大值的那个下标，在第一趟遍历结束后才进行交换；这样看起来冒泡排序比选择排序多做了很多次交换操作，影响了效率，但是正是由于冒泡排序的种种挨个比较，使得数组里的元素永远不会越过其它的元素进行比较，因此就不会发生改变两个想等元素的位置这种情况。
+   所以选择排序虽然效率稍快，但是不稳定，而冒泡排序效率虽然稍低但确实稳定的排序算法
+
+从小到大排序：
+
+```
+void swap(int &a, int &b)
+{
+//修改bug，按引用传递的值，如果传进来的为同一个数组元素，
+//修改之后这个数将变成0
+	if (a == b)
+		return;
+	a = a + b;
+	b = a - b;
+	a = a - b;
+}
+void select_sort(int  *p, int length)
+{
+	int index;
+	for (int i = 0; i < length - 1; i++)
+	{
+		index = i;
+		for (int j = i + 1; j < length;j ++)
+		{
+			if (p[index] > p[j])
+			{
+				index = j;
+			}
+		}
+
+		swap(p[index], p[i]);
+	}
+}
+```
+运行结果：
+![这里写图片描述](http://img.blog.csdn.net/20160908225224035)
